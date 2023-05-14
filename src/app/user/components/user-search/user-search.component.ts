@@ -36,7 +36,7 @@ export class UserSearchComponent implements OnInit {
   }
 
   applyFilter() {
-    if (this.searchText.length > 5) {
+    if (this.searchText.length > 3) {
       this.isLoading = true;
       this.userService.searchUser(this.searchText).subscribe((res: any) => {
         this.dataSource = res.items;

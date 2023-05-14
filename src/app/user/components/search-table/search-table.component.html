@@ -2,27 +2,34 @@
   <h1>{{title}}</h1>
 </div>
 <div class="container">
+  <mat-card>
+    <mat-card-subtitle>
+      Input the search text for filtering the table and Press Enter for API search
+    </mat-card-subtitle>
+  </mat-card>
+
   <div class="row">
     <div class="search-hero">
-      <input class="form-control" type="text" name="search" [(ngModel)]="searchText"  (keydown.enter)="applyFilter()"  autocomplete="off" placeholder="&#61442;  3 Char: Follower search....">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" (keydown.enter)="applyFilter()"
+        autocomplete="off" placeholder="&#61442;  3 Char: Follower search....">
     </div>
 
     <mat-spinner *ngIf="isLoading"></mat-spinner>
     <table *ngIf="!isLoading" class="table table-striped">
       <thead>
-      <tr>
-        <th></th>
-        <th>User</th>
-        <th>Link</th>
-      </tr>
+        <tr>
+          <th></th>
+          <th>User</th>
+          <th>Link</th>
+        </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let el of items | filter:searchText">
-        <td> <img mat-card-image class="img-box" [src]="el.avatar_url" alt="Photo of {{el.login}}"></td>
-        <td>{{el.login}}</td>
-        <td><a [href]="el.html_url"> <mat-icon  matTooltip="navigate to GitHub account"> info</mat-icon></a></td>
-      </tr>
-      <div *ngIf="(items | filter:searchText) .length === 0">No records To Show</div>
+        <tr *ngFor="let el of items | filter:searchText">
+          <td> <img mat-card-image class="img-box" [src]="el.avatar_url" alt="Photo of {{el.login}}"></td>
+          <td>{{el.login}}</td>
+          <td><a [href]="el.html_url"> <mat-icon matTooltip="navigate to GitHub account"> info</mat-icon></a></td>
+        </tr>
+        <div *ngIf="(items | filter:searchText) .length === 0">No records To Show</div>
       </tbody>
     </table>
   </div>
