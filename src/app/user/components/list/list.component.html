@@ -3,7 +3,7 @@
 	<mat-list-item *ngFor="let link of repos">
 		<a matLine href="javascript:void(0)">{{ link.name }}</a>
 		<button mat-icon-button>
-        <a [href]="link.svn_url"><mat-icon  matTooltip="Info about the action"> info</mat-icon></a>
+        <a [href]="link.svn_url"><mat-icon  matTooltip="Navigate to GitHub"> info</mat-icon></a>
      </button>
 	</mat-list-item>
   <div *ngIf="(repos) .length === 0">No Public Repos To Show...</div>

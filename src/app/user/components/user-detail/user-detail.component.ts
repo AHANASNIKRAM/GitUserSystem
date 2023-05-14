@@ -23,10 +23,15 @@ userName: string = '';
     //get username out of the url & set var
     this.route.params.subscribe(params => {
     this.userName = params['username'];
+    // this.loadDataInSequence();
+    this.loadDataInParallel();
   });
 
-// this.loadDataInSequence();
 
+
+
+  }
+  loadDataInParallel(){
     const requestArray = [];
     requestArray.push(this.loadUserDetails());
     requestArray.push(this.loadUserRepo());

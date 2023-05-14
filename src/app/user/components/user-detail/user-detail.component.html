@@ -5,7 +5,8 @@
     </div>
     <div class="card-description">
       <h3 class="card-title text-success">{{user.login}}</h3>
-      <h5 class="card-title text-secondary">Stop guessing, known for accuracy.</h5>
+      <h3 class="card-title text-success">Name: {{user.name}}</h3>
+      <h5 class="card-title text-secondary">Profile:<a [href]="user.html_url"> <mat-icon matTooltip="navigate to GitHub account"> info</mat-icon></a></h5>
       <p class="card-text">Bio: &nbsp;{{user.bio}}
       </p>
     </div>
