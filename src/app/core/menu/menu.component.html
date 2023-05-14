@@ -1,0 +1,27 @@
+<div>
+
+  <div class="demo-menu">
+    <div class="menu-section">
+      <mat-toolbar>
+        <button mat-icon-button [matMenuTriggerFor]="basic">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <button mat-menu-item  [routerLink]="['/home']" >GitHub User System</button>
+      </mat-toolbar>
+
+      <mat-menu #basic="matMenu">
+        <button mat-menu-item  [routerLink]="['/home']" >Home</button>
+        <button mat-menu-item [matMenuTriggerFor]="submenu">User</button>
+      </mat-menu>
+    </div>
+
+
+
+    <mat-menu #submenu="matMenu">
+      <button mat-menu-item [routerLink]="['/users','search']" >Search</button>
+      <button mat-menu-item [routerLink]="['/users','top']" >Top Users</button>
+    </mat-menu>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

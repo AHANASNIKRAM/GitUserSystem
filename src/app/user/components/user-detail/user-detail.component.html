@@ -1,0 +1,24 @@
+<div class="card-wrapper">
+  <div class="card-custom">
+    <div class="card-imgage">
+      <img class="card-img rounded-circle" [src]="user.avatar_url" alt="Card image cap">
+    </div>
+    <div class="card-description">
+      <h3 class="card-title text-success">{{user.login}}</h3>
+      <h5 class="card-title text-secondary">Stop guessing, known for accuracy.</h5>
+      <p class="card-text">Bio: &nbsp;{{user.bio}}
+      </p>
+    </div>
+  </div>
+  <div class="card-custom">
+    <div class="rating">Followers: &nbsp; {{user.followers}}</div>
+    <div class="member-from"></div>
+    <div class="rating-points">Following: &nbsp; {{user.following}}</div>
+  </div>
+  <hr />
+  <app-search-table [items]="followers" title="Top Followers"></app-search-table>
+
+  <hr />
+
+  <app-list [repos]="repos"></app-list>
+</div>
