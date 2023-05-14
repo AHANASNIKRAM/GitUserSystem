@@ -4,6 +4,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { DeploymentsComponent } from './deployments/deployments.component';
 import { HomeComponent } from './home/home.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { MaterialModule } from '../material/material/material.module';
 
 
 
@@ -15,6 +16,7 @@ import { HomeRoutingModule } from './home-routing.module';
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     HomeRoutingModule
   ]
 })
